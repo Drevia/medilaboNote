@@ -1,5 +1,6 @@
 package com.openclassrooms.medilaboNote.service;
 
+import com.openclassrooms.medilaboNote.dto.PatientNoteDto;
 import com.openclassrooms.medilaboNote.model.PatientNote;
 import com.openclassrooms.medilaboNote.repository.PatientNoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,11 @@ public class PatientNoteService {
 
     public List<PatientNote> getAllPatientByPatientId(String patientId) {
         return repository.findByPatientId(patientId);
+    }
+
+    public PatientNote createPatient(PatientNoteDto patientNoteDto) {
+        PatientNote patientNote = PatientNote.builder().note(patientNoteDto.getNote())
+                .patientName(patientNoteDto.getPatientName()).patientId(patientNoteDto.getPatientId()).build();
+        return repository.save(patientNote);
     }
 }
