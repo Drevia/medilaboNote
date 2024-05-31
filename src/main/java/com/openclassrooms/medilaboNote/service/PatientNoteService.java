@@ -22,7 +22,7 @@ public class PatientNoteService {
         return repository.findByPatientId(patientId);
     }
 
-    public PatientNote createPatient(PatientNoteDto patientNoteDto) {
+    public PatientNote createPatientNote(PatientNoteDto patientNoteDto) {
         PatientNote patientNote = PatientNote.builder().note(patientNoteDto.getNote())
                 .patientName(patientNoteDto.getPatientName()).patientId(patientNoteDto.getPatientId()).build();
         return repository.save(patientNote);

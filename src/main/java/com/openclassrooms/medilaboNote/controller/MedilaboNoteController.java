@@ -29,7 +29,7 @@ public class MedilaboNoteController implements MedilaboNoteControllerSwagger {
 
     @Override
     public ResponseEntity<PatientNote> createPatientNote(@RequestBody PatientNoteDto patientNote) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(patientNoteService.createPatient(patientNote));
+        return ResponseEntity.status(HttpStatus.CREATED).body(patientNoteService.createPatientNote(patientNote));
     }
 
 }
