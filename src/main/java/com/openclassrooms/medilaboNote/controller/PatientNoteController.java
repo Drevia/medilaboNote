@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class MedilaboNoteController implements MedilaboNoteControllerSwagger {
+public class PatientNoteController implements PatientNoteControllerSwagger {
 
     @Autowired
     private PatientNoteService patientNoteService;
