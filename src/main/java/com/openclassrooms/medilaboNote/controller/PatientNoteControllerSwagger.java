@@ -20,7 +20,7 @@ public interface PatientNoteControllerSwagger {
     ResponseEntity<List<PatientNote>> getAllPatient();
 
     @GetMapping("/note/{id}")
-    ResponseEntity<List<PatientNote>> getAllPatientById(@PathVariable String id);
+    ResponseEntity<List<PatientNote>> getAllPatientByPatientId(@PathVariable String id);
 
     @PostMapping("/note")
     ResponseEntity<PatientNote> createPatientNote(@RequestBody PatientNoteDto patientNote);

@@ -23,7 +23,7 @@ public class PatientNoteController implements PatientNoteControllerSwagger {
     }
 
     @Override
-    public ResponseEntity<List<PatientNote>> getAllPatientById(String id) {
+    public ResponseEntity<List<PatientNote>> getAllPatientByPatientId(String id) {
         return ResponseEntity.ok(patientNoteService.getAllPatientByPatientId(id));
     }
 
