@@ -2,7 +2,6 @@ package com.openclassrooms.medilaboNote.controller;
 
 import com.openclassrooms.medilaboNote.dto.PatientNoteDto;
 import com.openclassrooms.medilaboNote.model.PatientNote;
-import com.openclassrooms.medilaboNote.service.JwtService;
 import com.openclassrooms.medilaboNote.service.PatientNoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
