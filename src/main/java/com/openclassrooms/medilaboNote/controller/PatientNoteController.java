@@ -32,4 +32,14 @@ public class PatientNoteController implements PatientNoteControllerSwagger {
         return ResponseEntity.status(HttpStatus.CREATED).body(patientNoteService.createPatientNote(patientNote));
     }
 
+    @Override
+    public void deletePatientNote(String id) {
+        patientNoteService.deletePatientNote(id);
+    }
+
+    @Override
+    public ResponseEntity<String> getPatientIdByPatientNoteId(String patientNoteId) {
+        return ResponseEntity.ok(patientNoteService.getPatientIdByPatientNoteId(patientNoteId));
+    }
+
 }

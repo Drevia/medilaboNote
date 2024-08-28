@@ -27,4 +27,15 @@ public class PatientNoteService {
                 .patientName(patientNoteDto.getPatientName()).patientId(patientNoteDto.getPatientId()).build();
         return repository.save(patientNote);
     }
+
+    public void deletePatientNote(String patientNoteId) {
+        PatientNote patientNote = repository.findById(patientNoteId).orElseThrow(
+                () -> new IllegalArgumentException("Patient Note Not Found"));
+        repository.delete(patientNote);
+    }
+
+    public String getPatientIdByPatientNoteId(String patientNoteId) {
+        PatientNote patientNote = repository.findById(patientNoteId).orElseThrow();
+        return patientNote.getPatientId();
+    }
 }

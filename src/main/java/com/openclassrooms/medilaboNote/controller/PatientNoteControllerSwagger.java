@@ -11,6 +11,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,4 +55,10 @@ public interface PatientNoteControllerSwagger {
             @APIResponse(responseCode = "500", description = "Internal server error.")
     })
     ResponseEntity<PatientNote> createPatientNote(@RequestBody(content = @Content(schema = @Schema(implementation = PatientNoteDto.class)),required = true, description = "The PatientNote to be created") PatientNoteDto patientNote);
+
+    @DeleteMapping("/note/{id}")
+    void deletePatientNote(@PathVariable String id);
+
+    @GetMapping("/note/patient/{patientNoteId}")
+    ResponseEntity<String> getPatientIdByPatientNoteId(@PathVariable String patientNoteId);
 }
